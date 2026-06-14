@@ -8,11 +8,9 @@ ll qpow(ll m,ll n){
      ll x=m%mod;
      while(n){
           if(n&1){
-               ans*=x;
-               ans%=mod;
+               ans=(ans*x)%mod;
           }
-          x*=x;
-          x%=mod;
+          x=(x*x)%mod;
           n>>=1;
      }
      return ans;
