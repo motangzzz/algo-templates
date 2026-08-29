@@ -63,13 +63,15 @@ void addEdge(int u,int v){
 }
 
 void buildGraph(){
-     for(int i=0;i<=cnt;++i) addEdge(fail[i],i);
+     for(int i=0;i<=cnt;++i){
+          if(i||fail[i]) addEdge(fail[i],i);
+     }
 }
 
 //2.递归得到计数
 
 ll cul(int i){
-     ll sum=0;
+     ll sum=times[i];
      for(auto x:dis[i]) sum+=cul(x);
      times[i]=sum;
      return sum;
