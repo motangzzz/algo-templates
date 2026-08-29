@@ -24,6 +24,7 @@ int exgcd1(int m,int n,int& x,int& y){
           y=0;
           return m;
      }
-     int tp=x-m/n*y;
-     return exgcd1(n,m%n,y,tp);
+     int r=exgcd1(n,m%n,y,x);
+     y-=m/n*x;
+     return r;
 }

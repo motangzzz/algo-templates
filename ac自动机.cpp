@@ -23,6 +23,9 @@ int cnt=0;
 //邻接矩阵，建立反图
 vi dis[MAXN];
 
+//边界数组，记录每个串匹配的位置
+vi idx[MAXN];
+
 //把每个串建立自动机
 void insert(int i,string& s){
      int u=0;
